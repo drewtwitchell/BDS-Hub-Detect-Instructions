@@ -1,8 +1,8 @@
-# BDS Hub Detect Instructions
+# Black Duck Detect Instructions
 
 ## Table of Contents
 
-1. [What is Hub Detect?](#whatisdetect)
+1. [What is Black Duck Detect?](#whatisdetect)
 1. [Running your first scan](#firstscan)
 	* [Windows](#windows)
 	* [Linux/Unix](#linux)
@@ -10,14 +10,14 @@
 1. [Package Manager Examples](#examples)
 
 
-## What is Hub Detect? 
+## What is Black Duck Detect? 
 <a name="whatisdetect"></a>
 
-Hub Detect is a utility (developed by Black Duck Software) to identify all open source contained within an application. It utilizes two primary methods of detection:
+Black Duck Detect is a utility (developed by Black Duck Software) to identify all open source contained within an application. It utilizes two primary methods of detection:
 
 * **Package Manager Identification**
 
-	If the project Hub Detect is inspecting uses a package manager, it will be invoked to reconcile all the parent and transitive dependences. 
+	If the project Black Duck Detect is inspecting uses a package manager, it will be invoked to reconcile all the parent and transitive dependences. 
 
 * **Signature Scanning**
 
@@ -50,10 +50,10 @@ _Please note, if the project being evaluated does not utilize a package manager,
 
 These are meant to be run inside powershell. See the hub-detect.ps1 file for complete list of environment variables that can be utilized to modify the execution script.
 
-Send results to the Hub:
+Send results to the Black Duck:
 
 ```
-[Net.ServicePointManager]::SecurityProtocol = 'tls12'; irm https://blackducksoftware.github.io/hub-detect/hub-detect.ps1?$(Get-Random) | iex; detect --blackduck.url=http://myhub.url --blackduck.username=myusername --blackduck.password=mypassword
+[Net.ServicePointManager]::SecurityProtocol = 'tls12'; irm https://blackducksoftware.github.io/hub-detect/hub-detect.ps1?$(Get-Random) | iex; detect --blackduck.url=http://myblackduck.url --blackduck.username=myusername --blackduck.password=mypassword
 ```
 
 
@@ -69,11 +69,11 @@ Offline scan to create JSON:
 
 **Shell**
 
-Send results to the Hub:
+Send results to the Black Duck:
 
 ```
 #!/bin/bash
-bash <(curl -s https://blackducksoftware.github.io/hub-detect/hub-detect.sh) --blackduck.url=http://myhub.url --blackduck.username=myusername --blackduck.password=mypassword
+bash <(curl -s https://blackducksoftware.github.io/hub-detect/hub-detect.sh) --blackduck.url=http://myblackduck.url --blackduck.username=myusername --blackduck.password=mypassword
 ```
 
 Offline scan to create JSON:
@@ -83,11 +83,11 @@ Offline scan to create JSON:
 bash <(curl -s https://blackducksoftware.github.io/hub-detect/hub-detect.sh) --detect.blackduck.signature.scanner.host.url=https://saleshub.blackducksoftware.com --detect.signature.scanner.dry.run=true --blackduck.offline.mode=true
 ```
 
-## Common Hub Detect properties
+## Common Black Duck Detect properties
 
 <a name="common"></a>
 
-**Display full list of Hub Detect properties**
+**Display full list of Black Duck Detect properties**
 
 ```
 #!/bin/bash
@@ -96,7 +96,7 @@ bash <(curl -s https://blackducksoftware.github.io/hub-detect/hub-detect.sh) -hv
 
 **Automatically import certificates**
 
-You can automatically import certificates from your instance of the Hub. This is a convenience feature, and your certificates should be imported by your administrator. However, if the certificate is not imported, Hub Detect imports the certificate for you using the following property set to true.
+You can automatically import certificates from your instance of Black Duck. This is a convenience feature, and your certificates should be imported by your administrator. However, if the certificate is not imported, Black Duck Detect imports the certificate for you using the following property set to true.
 
 
 Property: 
@@ -112,7 +112,7 @@ Example:
 bash <(curl -s https://blackducksoftware.github.io/hub-detect/hub-detect.sh) --blackduck.url=http://myhub.url --blackduck.username=myusername --blackduck.trust.cert=true
 ```
 
-## Hub Detect Examples
+## Black Duck Detect Examples
 
 <a name="examples"></a>
 
