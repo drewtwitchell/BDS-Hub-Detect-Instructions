@@ -102,7 +102,7 @@ You can automatically import certificates from your instance of the Hub. This is
 Property: 
 
 ```
---blackduck.hub.trust.cert=true
+--blackduck.trust.cert=true
 ```
 
 Example:
