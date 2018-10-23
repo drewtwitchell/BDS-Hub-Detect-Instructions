@@ -53,14 +53,14 @@ These are meant to be run inside powershell. See the hub-detect.ps1 file for com
 Send results to the Hub:
 
 ```
-[Net.ServicePointManager]::SecurityProtocol = 'tls12'; irm https://blackducksoftware.github.io/hub-detect/hub-detect.ps1?$(Get-Random) | iex; detect --blackduck.hub.url=http://myhub.url --blackduck.hub.username=myusername --blackduck.hub.password=mypassword
+[Net.ServicePointManager]::SecurityProtocol = 'tls12'; irm https://blackducksoftware.github.io/hub-detect/hub-detect.ps1?$(Get-Random) | iex; detect --blackduck.url=http://myhub.url --blackduck.username=myusername --blackduck.password=mypassword
 ```
 
 
 Offline scan to create JSON:
 
 ```
-[Net.ServicePointManager]::SecurityProtocol = 'tls12'; irm https://blackducksoftware.github.io/hub-detect/hub-detect.ps1?$(Get-Random) | iex; detect --detect.hub.signature.scanner.host.url=https://saleshub.blackducksoftware.com --detect.hub.signature.scanner.dry.run=true --blackduck.hub.offline.mode=true
+[Net.ServicePointManager]::SecurityProtocol = 'tls12'; irm https://blackducksoftware.github.io/hub-detect/hub-detect.ps1?$(Get-Random) | iex; detect --detect.blackduck.signature.scanner.host.url=https://saleshub.blackducksoftware.com --detect.blackduck.signature.scanner.dry.run=true --blackduck.offline.mode=true
 ```
 
 ## Linux/Unix
@@ -73,14 +73,14 @@ Send results to the Hub:
 
 ```
 #!/bin/bash
-bash <(curl -s https://blackducksoftware.github.io/hub-detect/hub-detect.sh) --blackduck.hub.url=http://myhub.url --blackduck.hub.username=myusername --blackduck.hub.password=mypassword
+bash <(curl -s https://blackducksoftware.github.io/hub-detect/hub-detect.sh) --blackduck.url=http://myhub.url --blackduck.username=myusername --blackduck.password=mypassword
 ```
 
 Offline scan to create JSON:
 
 ```
 #!/bin/bash
-bash <(curl -s https://blackducksoftware.github.io/hub-detect/hub-detect.sh) --detect.hub.signature.scanner.host.url=https://saleshub.blackducksoftware.com --detect.hub.signature.scanner.dry.run=true --blackduck.hub.offline.mode=true
+bash <(curl -s https://blackducksoftware.github.io/hub-detect/hub-detect.sh) --detect.blackduck.signature.scanner.host.url=https://saleshub.blackducksoftware.com --detect.signature.scanner.dry.run=true --blackduck.offline.mode=true
 ```
 
 ## Common Hub Detect properties
@@ -109,7 +109,7 @@ Example:
 
 ```
 #!/bin/bash
-bash <(curl -s https://blackducksoftware.github.io/hub-detect/hub-detect.sh) --blackduck.hub.url=http://myhub.url --blackduck.hub.username=myusername --blackduck.hub.trust.cert=true
+bash <(curl -s https://blackducksoftware.github.io/hub-detect/hub-detect.sh) --blackduck.url=http://myhub.url --blackduck.username=myusername --blackduck.trust.cert=true
 ```
 
 ## Hub Detect Examples
@@ -136,7 +136,7 @@ Example:
 
 ```
 #!/bin/bash
-bash <(curl -s https://blackducksoftware.github.io/hub-detect/hub-detect.sh) --blackduck.hub.url=http://myhub.url --blackduck.hub.username=myusername --blackduck.hub.trust.cert=true --detect.maven.path/path/to/maven
+bash <(curl -s https://blackducksoftware.github.io/hub-detect/hub-detect.sh) --blackduck.url=http://myhub.url --blackduck.username=myusername --blackduck.trust.cert=true --detect.maven.path/path/to/maven
 ```
 
 
